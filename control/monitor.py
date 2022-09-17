@@ -152,7 +152,7 @@ def start_cron():
     print("Iniciando cron...")
     #schedule.every(5).minutes.do(analyze_data)
     print("Servicio de control iniciado")
-    schedule.every(1).minutes.do(analyze_data_luminosity)
+    schedule.every(2).minutes.do(analyze_data_luminosity)
     while 1:
         schedule.run_pending()
         time.sleep(1)
