@@ -65,9 +65,9 @@ def get_last_week_data(user, city, state, country):
                 reg.length for reg in raw_data
             )
             result[measure.name] = {
-                "min": minVal if minVal != None else 0,
-                "max": maxVal if maxVal != None else 0,
-                "avg": round(avgVal if avgVal != None else 0, 2),
+                "min": "{0:.2f}".format(minVal if minVal != None else 0),
+                "max": "{0:.2f}".format(maxVal if maxVal != None else 0),
+                "avg": "{0:.2f}".format(round(avgVal if avgVal != None else 0, 2)),
                 "data": data,
             }
     except Exception as error:
