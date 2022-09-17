@@ -64,6 +64,14 @@ que el emulador genera y la variación de la humedad
 MOISTURE_VALUE = 60.0
 MOISTURE_VARIATION = 5.0
 
+'''
+Valor medio de la luminosidad en porcentaje
+que el emulador genera y la variación de la luminosidad
+'''
+
+LUMINOSITY_VALUE = 150.0
+LUMINOSITY_VARIATION = 40.0
+
 
 def process_message(msg: str):
     '''
@@ -99,6 +107,16 @@ def measure_temperature():
     max_value = TEMPERATURE_VALUE + TEMPERATURE_VARIATION
     return random.uniform(min_value, max_value)
 
+def measure_luminosity():
+    '''
+    Función de medición de luminosidad
+    En emulación, estos datos son aleatorios con distribución uniforme
+    desde el valor medio -variación hasta el valor medio +variación.
+    Si se utilizara un sensor, acá se debería leer la luminosidad real.
+    '''
+    min_value = LUMINOSITY_VALUE - LUMINOSITY_VARIATION
+    max_value = LUMINOSITY_VALUE + LUMINOSITY_VARIATION
+    return random.uniform(min_value, max_value)
 
 def measure_moisture():
     '''
@@ -157,11 +175,14 @@ def measure_data():
     print("Midiendo...")
     temperature = measure_temperature()
     moisture = measure_moisture()
+    luminosity=measure_luminosity()
     print("\tTemperatura: {}°C".format(temperature))
     print("\tHumedad: {}%".format(moisture))
+    print("\tLuminosidad: {}%".format(luminosity))
     mqtt_publish(MQTT_PUB_TOPIC, json.dumps({
         "temperatura": temperature,
-        "humedad": moisture
+        "humedad": moisture,
+        "luminosidad": luminosity
     }))
     print("Datos enviados")
 
