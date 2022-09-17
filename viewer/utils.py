@@ -226,5 +226,4 @@ def get_map_context(request):
     context["start"] = startFormatted
     context["end"] = endFormatted
     context["data"] = data
-    print("1XXX",data)
     return context

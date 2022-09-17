@@ -365,6 +365,7 @@
         body: JSON.stringify(newData),
         });
       var newData = await res.json();
+      console.log("newData",newData);
       if (newData.result) {
         for (const key in newData.result) {
           if (Object.hasOwnProperty.call(newData.result, key)) {

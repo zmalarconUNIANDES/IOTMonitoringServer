@@ -88,7 +88,6 @@ def analyze_data_luminosity():
         state = item['station__location__state__name']
         city = item['station__location__city__name']
         user = item['station__user__username']
-        print("check_value",min_value)
         if  item["check_value"] < min_value:
             alert = True
 
