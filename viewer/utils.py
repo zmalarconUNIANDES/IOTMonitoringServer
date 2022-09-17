@@ -141,6 +141,7 @@ El template espera un contexto de este tipo:
             stateParam,
             countryParam,
         )
+        print("xxxx",context["data"])
         context["selectedCity"] = City.objects.get(name=cityParam)
         context["selectedState"] = State.objects.get(name=stateParam)
         context["selectedCountry"] = Country.objects.get(name=countryParam)

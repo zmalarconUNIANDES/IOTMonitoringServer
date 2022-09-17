@@ -69,11 +69,12 @@ Valor medio de la luminosidad en porcentaje
 que el emulador genera y la variación de la luminosidad
 '''
 
-LUMINOSITY_VALUE = 150.0
+LUMINOSITY_VALUE = 110.0
 LUMINOSITY_VARIATION = 40.0
 
 
 def process_message(msg: str):
+    print("msg",msg)
     '''
     Procesar mensaje recibido
     '''
