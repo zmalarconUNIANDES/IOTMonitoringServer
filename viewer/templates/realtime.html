@@ -349,65 +349,7 @@
     let qtySamePeriods = 0;
 
     setInterval(async () => {
-      var newData = {
-        city: "{{selectedCity.name}}",
-        state: "{{selectedState.name}}",
-        country: "{{selectedCountry.name}}",
-        action: "get_data"
-      }
-      var url = '/realtime-data/';
-      let csrftoken = Cookies.get('csrftoken');
-      const headers = new Headers({
-        'Cookie': "csrftoken="+csrftoken + "; " + "sessionid="+Cookies.get('sessionid'),
-    });
-      let res = await fetch(url, {
-        method: "POST", 
-        body: JSON.stringify(newData),
-        });
-      var newData = await res.json();
-      console.log("newData",newData);
-      if (newData.result) {
-        for (const key in newData.result) {
-          if (Object.hasOwnProperty.call(newData.result, key)) {
-            const element = newData.result[key];
-            console.log("Element: ", element);
-            if (element.data.length < 1) {
-              qtySamePeriods++;
-            }
-            else if (element.data[element.data.length-1][0] == data[key].data[data[key].data.length-1][0]) {
-              qtySamePeriods++;
-            } else {
-              qtySamePeriods = 0;
-            }
-            data = newData.result;
-            let blockerElement = document.getElementById('blocker-' + key);
-            let stats = document.getElementsByClassName('stat');
-            if (qtySamePeriods > 2) {
-              blockerElement.style.display = 'flex';
-              [].forEach.call(stats, stat => {
-                stat.innerHTML = "-";
-              });
-            } else {
-              blockerElement.style.display = 'none';
-              let minElement = document.getElementById('min-' + key);
-              minElement.innerText = element.min;
-              let maxElement = document.getElementById('max-' + key);
-              maxElement.innerText = element.max;
-              let avgElement = document.getElementById('avg-' + key);
-              avgElement.innerText = element.avg;
-            }
-;            charts[key].update({
-              series: [
-          {
-            type: "line",
-            name: "Valor",
-            data: element.data,
-          },
-        ],
-            });
-          }
-        }
-      }
+      window.location.reload();
     }, 60000);
 </script>
 {% else %}
