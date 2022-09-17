@@ -70,6 +70,7 @@ def get_last_week_data(user, city, state, country):
                 "avg": round(avgVal if avgVal != None else 0, 2),
                 "data": data,
             }
+            print("data",data)
     except Exception as error:
         print("Error en consulta de datos:", error)
         traceback.print_exc()
@@ -141,7 +142,7 @@ El template espera un contexto de este tipo:
             stateParam,
             countryParam,
         )
-        print("xxxx",context["data"])
+       
         context["selectedCity"] = City.objects.get(name=cityParam)
         context["selectedState"] = State.objects.get(name=stateParam)
         context["selectedCountry"] = Country.objects.get(name=countryParam)
@@ -225,5 +226,5 @@ def get_map_context(request):
     context["start"] = startFormatted
     context["end"] = endFormatted
     context["data"] = data
-
+    print("1XXX",data)
     return context
