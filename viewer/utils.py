@@ -70,7 +70,6 @@ def get_last_week_data(user, city, state, country):
                 "avg": round(avgVal if avgVal != None else 0, 2),
                 "data": data,
             }
-            print("data",data)
     except Exception as error:
         print("Error en consulta de datos:", error)
         traceback.print_exc()
