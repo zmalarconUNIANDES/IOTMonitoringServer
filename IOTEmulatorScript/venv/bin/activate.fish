@@ -29,7 +29,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/zmalarcon/Localserver/miso/IOTEmulatorScript/venv"
+set -gx VIRTUAL_ENV "/Users/sebastiannorenamarquez/Documents/UniAndes/IOT/reto5/IOTMonitoringServer/IOTEmulatorScript/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

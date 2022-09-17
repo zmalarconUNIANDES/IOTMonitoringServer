@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/zmalarcon/Localserver/miso/IOTEmulatorScript/venv"
+VIRTUAL_ENV="/Users/sebastiannorenamarquez/Documents/UniAndes/IOT/reto5/IOTMonitoringServer/IOTEmulatorScript/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

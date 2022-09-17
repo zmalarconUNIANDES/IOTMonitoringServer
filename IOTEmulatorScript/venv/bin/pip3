@@ -1,4 +1,4 @@
-#!/Users/zmalarcon/Localserver/miso/IOTEmulatorScript/venv/bin/python3.9
+#!/Users/sebastiannorenamarquez/Documents/UniAndes/IOT/reto5/IOTMonitoringServer/IOTEmulatorScript/venv/bin/python3.9
 # -*- coding: utf-8 -*-
 import re
 import sys
