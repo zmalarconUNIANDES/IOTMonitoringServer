@@ -69,7 +69,7 @@ Valor medio de la luminosidad en porcentaje
 que el emulador genera y la variación de la luminosidad
 '''
 
-LUMINOSITY_VALUE = 110.0
+LUMINOSITY_VALUE = 90.0
 LUMINOSITY_VARIATION = 40.0
 
 
@@ -136,6 +136,7 @@ def on_connect(client, userdata, flags, rc):
     Función de conexión MQTT
     '''
     print("Connected with result: " + mqtt.connack_string(rc))
+    print("MQTT_SUB_TOPIC",MQTT_SUB_TOPIC)
     client.subscribe(MQTT_SUB_TOPIC)
 
 
@@ -180,6 +181,7 @@ def measure_data():
     print("\tTemperatura: {}°C".format(temperature))
     print("\tHumedad: {}%".format(moisture))
     print("\tLuminosidad: {}%".format(luminosity))
+    print("MQTT_PUB_TOPIC",MQTT_PUB_TOPIC)
     mqtt_publish(MQTT_PUB_TOPIC, json.dumps({
         "temperatura": temperature,
         "humedad": moisture,
