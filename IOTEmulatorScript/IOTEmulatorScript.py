@@ -27,14 +27,14 @@ import paho.mqtt.client as mqtt
 '''
 Dirección IP y puerto del servidor MQTT
 '''
-MQTT_HOST = "3.88.35.30"  # "ip.maquina.mqtt"
+MQTT_HOST = "35.173.184.143"  # "ip.maquina.mqtt"
 MQTT_PORT = 8082
 
 '''
 Usuario y contraseña para la conexión MQTT
 '''
-MQTT_USER = "ironman"  # "UsuarioMQTT"
-MQTT_PASSWORD = "jarvis123"  # "ContraseñaMQTT"
+MQTT_USER = "admin"  # "UsuarioMQTT"
+MQTT_PASSWORD = "admin"  # "ContraseñaMQTT"
 
 
 '''
@@ -69,7 +69,7 @@ Valor medio de la luminosidad en porcentaje
 que el emulador genera y la variación de la luminosidad
 '''
 
-LUMINOSITY_VALUE = 90.0
+LUMINOSITY_VALUE = 110.0
 LUMINOSITY_VARIATION = 40.0
 
 
